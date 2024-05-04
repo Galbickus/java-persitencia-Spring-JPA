@@ -28,6 +28,8 @@ public class Principal {
                     3 - Mostrar series buscadas
                                   
                     0 - Salir
+                    
+                    Ingrese una opción:
                     """;
             System.out.println(menu);
             opcion = teclado.nextInt();
