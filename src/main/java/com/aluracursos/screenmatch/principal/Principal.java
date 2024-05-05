@@ -90,10 +90,15 @@ public class Principal {
 
     private void mostrarSeriesBuscadas() {
      //   datosSeries.forEach(System.out::println);
-        List<Serie> series = new ArrayList<>();
+        /* List<Serie> series = new ArrayList<>();
         series = datosSeries.stream()
                 .map(d -> new Serie(d))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
+
+        List<Serie> series = repositorio.findAll();
+
+
+
         series.stream()
                 .sorted(Comparator.comparing(Serie::getGenero))
                 .forEach(System.out::println);
