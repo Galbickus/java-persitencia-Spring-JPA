@@ -6,7 +6,14 @@ public enum Categoria {
     COMEDIA("Comedy"),
     DRAMA("Drama"),
     CRIMEN("Crime"),
-    AVENTURA("Adventure");
+    AVENTURA("Adventure"),
+    TERROR("Horror"),
+    FANTASIA("Fantasy"),
+    SUSPENSO("Thriller"),
+    ANIMACION("Animation"),
+    CORTO("Short"),
+    FAMILIAR("Family"),
+    CIENCIA_FICCION("Sci-Fi");
 
     private String categoriaOmdb;
 
