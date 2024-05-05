@@ -19,8 +19,10 @@ public class Principal {
     private final String API_KEY = "&apikey=";
     private ConvierteDatos conversor = new ConvierteDatos();
     private List<DatosSerie> datosSeries = new ArrayList<>();
+    private SerieRepository repositorio;
 
     public Principal(SerieRepository repository) {
+        this.repositorio = repository;
     }
 
     public void muestraElMenu() {
