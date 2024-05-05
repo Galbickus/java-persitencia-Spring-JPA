@@ -82,7 +82,9 @@ public class Principal {
     }
     private void buscarSerieWeb() {
         DatosSerie datos = getDatosSerie();
-        datosSeries.add(datos);
+        /*datosSeries.add(datos);*/  /*ya no quiero agregar estos datos a una lista sino guardarlos en una BD*/
+        Serie serie = new Serie(datos);
+        repositorio.save(serie);
         System.out.println(datos);
     }
 
