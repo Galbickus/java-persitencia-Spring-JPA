@@ -1,18 +1,25 @@
 package com.aluracursos.screenmatch.model;
 
 import com.aluracursos.screenmatch.service.ConsultaChatGPT;
+import jakarta.persistence.*;
 
 import java.util.OptionalDouble;
-
+@Entity
+@Table(name = "series")
 public class Serie {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long Id;
+    @Column(unique = true)
     private String titulo;
     private Integer totalTemporadas;
     private Double evaluacion;
     private String poster;
+    @Enumerated(EnumType.STRING)
     private Categoria genero;
     private String actores;
     private String sinopsis;
+    
 
     public Serie(DatosSerie datosSerie) {
         this.titulo = datosSerie.titulo();
@@ -23,6 +30,14 @@ public class Serie {
         this.actores = datosSerie.actores();
         /*this.sinopsis = ConsultaChatGPT.obtenerTraduccion(datosSerie.sinopsis());*/
         this.sinopsis = datosSerie.sinopsis();
+    }
+
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(long id) {
+        Id = id;
     }
 
     public String getTitulo() {
