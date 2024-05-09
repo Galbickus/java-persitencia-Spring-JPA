@@ -32,6 +32,7 @@ public class Principal {
                     1 - Buscar series 
                     2 - Buscar episodios
                     3 - Mostrar series buscadas
+                    4 - Buscar Series por título
                                   
                     0 - Salir
                     
@@ -50,6 +51,9 @@ public class Principal {
                     break;
                 case 3:
                     mostrarSeriesBuscadas();
+                    break;
+                case 4:
+                    buscarSeriesPorTitulo();
                     break;
                 case 0:
                     System.out.println("Cerrando la aplicación...");
@@ -72,8 +76,9 @@ public class Principal {
     private void buscarEpisodioPorSerie() {
     /*    DatosSerie datosSerie = getDatosSerie();*/
         mostrarSeriesBuscadas();
-        System.out.println("Ingresa el nombre de la serie que desea ver");
+        System.out.println("Ingresa el nombre de la serie que desea ver sus episodios");
         var nombreSerie = teclado.nextLine();
+
         Optional<Serie> serie = series.stream()
                 .filter(s -> s.getTitulo().toLowerCase().contains(nombreSerie.toLowerCase()))
                 .findFirst();
@@ -121,6 +126,18 @@ public class Principal {
         series.stream()
                 .sorted(Comparator.comparing(Serie::getGenero))
                 .forEach(System.out::println);
+    }
+
+    private void buscarSeriesPorTitulo(){
+        System.out.println("Ingresa el nombre de la serie que buscar");
+        var nombreSerie = teclado.nextLine();
+        Optional<Serie> serieBuscada = repositorio.findByTituloContainsIgnoreCase(nombreSerie);
+        if(serieBuscada.isPresent()){
+            System.out.println("La serie buscada es: " + serieBuscada.get());
+            System.out.println("");
+        }else {
+            System.out.println("serie no encontrada");
+        }
     }
 }
 
