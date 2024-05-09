@@ -172,7 +172,9 @@ public class Principal {
         System.out.println("Ingrese la calificación mínima de las series a listar (para decimales utilice coma \",\") ");
         var evaluacion = teclado.nextDouble();
         teclado.nextLine();
-        List<Serie> filtroSeries = repositorio.findByTotalTemporadasLessThanEqualAndEvaluacionGreaterThanEqual(totalTemporadas, evaluacion);
+        //List<Serie> filtroSeries = repositorio.findByTotalTemporadasLessThanEqualAndEvaluacionGreaterThanEqual(totalTemporadas, evaluacion);
+/*        List<Serie> filtroSeries = repositorio.seriesPorTemporadaYEvaluacion();*/
+        List<Serie> filtroSeries = repositorio.seriesPorTemporadaYEvaluacion(totalTemporadas,evaluacion);
         System.out.println("\n      Lista de series que cumplen con lo solicitado     \n");
         filtroSeries.forEach(s ->
                 System.out.println(s.getTitulo() + "  - calificación: " + s.getEvaluacion()));
