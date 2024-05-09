@@ -26,12 +26,14 @@ public class Principal {
         var opcion = -1;
         while (opcion != 0) {
             var menu = """
+                    
                     1 - Buscar series 
                     2 - Buscar episodios
                     3 - Mostrar series buscadas
                     4 - Buscar Series por título
                     5 - Top 5 mejores series
-                    6 - Buscar serie por categoría              
+                    6 - Buscar serie por categoría
+                    7 - Mostrar Series por cantidad de temporadas y calificación              
                     0 - Salir
                     
                     Ingrese una opción:
@@ -59,7 +61,9 @@ public class Principal {
                 case 6:
                     buscarSeriesPorCategoria();
                     break;
-
+                case 7:
+                    filtrarSeriesPorTemporadaYEvaluacion();
+                    break;
                 case 0:
                     System.out.println("Cerrando la aplicación...");
                     break;
@@ -158,6 +162,20 @@ public class Principal {
         List<Serie> seriesPorCategoria = repositorio.findByGenero(categoria);
         System.out.println("Las series de la categoria " + genero);
         seriesPorCategoria.forEach(System.out::println);
+    }
+
+    public void filtrarSeriesPorTemporadaYEvaluacion(){
+        System.out.println("Listar series según cantidad máxima de temporadas y calificación");
+        System.out.println("Ingresar la cantidad máxima de temporadas:");
+        var totalTemporadas = teclado.nextInt();
+        teclado.nextLine();
+        System.out.println("Ingrese la calificación mínima de las series a listar (para decimales utilice coma \",\") ");
+        var evaluacion = teclado.nextDouble();
+        teclado.nextLine();
+        List<Serie> filtroSeries = repositorio.findByTotalTemporadasLessThanEqualAndEvaluacionGreaterThanEqual(totalTemporadas, evaluacion);
+        System.out.println("\n      Lista de series que cumplen con lo solicitado     \n");
+        filtroSeries.forEach(s ->
+                System.out.println(s.getTitulo() + "  - calificación: " + s.getEvaluacion()));
     }
 }
 
