@@ -49,5 +49,5 @@ https://github.com/Galbickus/java-persitencia-Spring-JPA/assets/135274833/e91b8b
 - Compreende la estructura MVC en el desarrollo de aplicaciones web
 - Utiliza anotaciones de Spring para mapear rutas
 - Aplica buenas prácticas con el uso de DTO y otros conceptos
-- Conecta los datos del back-end a una aplicación fron-tend
+- Conecta los datos del back-end a una aplicación front-end
 - Maneja errores de CORS en la disponibilización de datos
