@@ -1,4 +1,4 @@
-package com.aluracursos.screenmatch;
+/*package com.aluracursos.screenmatch;
 
 import com.aluracursos.screenmatch.principal.Principal;
 import com.aluracursos.screenmatch.repository.SerieRepository;
@@ -22,3 +22,4 @@ public class ScreenmatchApplicationConsola implements CommandLineRunner {
 
 	}
 }
+*/
