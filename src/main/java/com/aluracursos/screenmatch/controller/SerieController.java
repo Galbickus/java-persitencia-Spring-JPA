@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Nodes.collect;
+
 
 @RestController
 public class SerieController {
@@ -19,8 +19,9 @@ public class SerieController {
     @GetMapping("/Series")
     public List<SerieDTO> obtenerTodasLasSeries(){
         return repository.findAll().stream()
-                .map(s ->new SerieDTO((s.getTitulo(), s.getTotalTemporadas(), s.getEvaluacion(), s.getPoster(),
-                        s.getGenero(),s.getActores(),s.getSinopsis()))).collect(Collectors.toList());
+                .map(s -> new SerieDTO(s.getTitulo(), s.getTotalTemporadas(), s.getEvaluacion(), s.getPoster(),
+                        s.getGenero(), s.getActores(), s.getSinopsis()))
+                .collect(Collectors.toList());
     }
 
 }
