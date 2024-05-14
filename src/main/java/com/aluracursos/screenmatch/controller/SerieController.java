@@ -23,5 +23,8 @@ public class SerieController {
                         s.getGenero(), s.getActores(), s.getSinopsis()))
                 .collect(Collectors.toList());
     }
-
+/*    @GetMapping("/inicio")
+    public String muestraMensaje(){
+        return "Probando  VEROOOOO ala LiveReloading";
+    }*/
 }
