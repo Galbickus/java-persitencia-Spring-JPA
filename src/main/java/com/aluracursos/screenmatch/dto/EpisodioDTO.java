@@ -1,4 +1,6 @@
 package com.aluracursos.screenmatch.dto;
 
-public class EpisodioDTO {
+public record EpisodioDTO (Integer temporada,
+                           String titulo,
+                           Integer numeroEpisodio){
 }
