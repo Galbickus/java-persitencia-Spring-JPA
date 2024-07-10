@@ -74,7 +74,7 @@ Utiliza las siguientes tecnologías y herramientas:
 - **Spring Boot:** Herramienta parae el desarrollo de aplicaciones web y microservicios 
 - **API**: API web JSON para metadatos de Peliculas y series: <a href="https://www.omdbapi.com/">API de OMDb</a>. API abierta. Base de Datos de películas abierta.La API de OMDb es un servicio web RESTful para obtener información de películas; todo el contenido y las imágenes del sitio son aportados y mantenidos por usuarios.
 - **Git**: Se utiliza Git como sistema de control de versiones para el desarrollo colaborativo del proyecto.
-- **PosgretSQL** Base de Datos de código abierto que tiene una sólida reputación por su fiabilidad, flexibilidad y soporte de estándares técnicos abiertos.
+- **PostgreSQL** Base de Datos de código abierto que tiene una sólida reputación por su fiabilidad, flexibilidad y soporte de estándares técnicos abiertos.
 - **IntelliJ IDEA** IDE utilizado en manipulación de Back End.
 - **VSC** Editor de código fuente utilizado para manipulacion del Front-End
 - **Trello**: Herramienta visual que permite a los equipos gestionar cualquier tipo de proyecto y flujo de trabajo.Indispensable para aplicacion de metodologías ágiles.
